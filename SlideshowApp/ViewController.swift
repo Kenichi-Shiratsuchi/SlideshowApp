@@ -18,6 +18,16 @@ class ViewController: UIViewController {
     // imageViewの割り付け
     @IBOutlet weak var imageView: UIImageView!
     
+    
+    // 戻るボタンのOutletイベント
+    @IBOutlet weak var backOutlet: UIButton!
+    
+    // 進むボタンのOutletイベント
+    @IBOutlet weak var nextOutlet: UIButton!
+    
+    // 再生/停止ボタンのOutletイベント
+    @IBOutlet weak var startOutlet: UIButton!
+    
 
     // スライドショーさせる画像ファイルの読み込みと配列を宣言
     var imageIndex : [UIImage] = [
@@ -30,7 +40,7 @@ class ViewController: UIViewController {
     
     
     // 画像ファイル配列用index
-    var cnt : Int = 0
+    var index : Int = 0
     
     
     
@@ -68,67 +78,47 @@ class ViewController: UIViewController {
         slidePauseFlag = true
         
         // resultViewControllerの画像を更新
-        resultViewController.image = imageIndex[cnt]
+        resultViewController.image = imageIndex[index]
         
     }
     
-  
     
-    
-    // タイマー実行中はtimer_secが加算されていく
-    @objc func updateTimer(_ timer: Timer) {
-        
-        
-        if slidePauseFlag == false {
-        
-        self.timer_sec += 0.1
-        // self.timerLabel.text = String(format: "%.1f", self.timer_sec)
-        
-        if self.timer_sec >= 2.0 {
-            cnt = cnt + 1
-            if cnt > 3 {cnt = 0}
-            // monLabel.text = "\(cnt)"
-            imageView.image = imageIndex[cnt]
-            self.timer_sec = 0
-            
-            }
-        }
-    }
-    
-    
-    // 進むボタン
+    // 進むボタンのActionイベント
     @IBAction func nextShow(_ sender: Any) {
-        
-        if slideShowFlag == false {
-        cnt = cnt + 1
-        if cnt > 3 {cnt = 0}
-        // monLabel.text = "\(cnt)"
-        imageView.image = imageIndex[cnt]
-        }
+   
+            if slideShowFlag == false {
+                index = index + 1
+                    if index > 3 {
+                        index = 0
+                    }
+                    // monLabel.text = "\(index)"
+                    imageView.image = imageIndex[index]
+            }
         
     }
  
  
-    // 戻るボタン
+    // 戻るボタンのActionイベント
     @IBAction func backShow(_ sender: Any) {
-        
         if slideShowFlag == false {
-        cnt = cnt - 1
-        if cnt < 0 {cnt = 3}
-        // monLabel.text = "\(cnt)"
-        imageView.image = imageIndex[cnt]
+        index = index - 1
+        if index < 0 {index = 3}
+        // monLabel.text = "\(index)"
+        imageView.image = imageIndex[index]
         }
-        
     }
     
-    
-    
-    
-    // 再生/停止ボタン
+    // 再生/停止ボタンのActionイベント
     @IBAction func startShow(_ sender: Any) {
         
             // 再生条件
-        if slideShowFlag == false {slideShowFlag = true
+        if slideShowFlag == false {
+            
+            startOutlet.setTitle("停止", for: .normal)    // 再生・停止ボタンのタイトル文字変更
+            backOutlet.isEnabled = false                // 戻るボタンの無効
+            nextOutlet.isEnabled = false                // 進むボタンの無効
+            slideShowFlag = true                        // スライドショーの開始
+            
             // タイマーのセット
             self.timer = Timer.scheduledTimer(timeInterval: 0.1,
                                               target: self,
@@ -137,8 +127,13 @@ class ViewController: UIViewController {
                                               repeats: true)
             
             // 停止条件
-        } else if slideShowFlag == true {slideShowFlag = false
-            self.timer.invalidate()     // タイマーの停止
+        } else if slideShowFlag == true {
+            
+            startOutlet.setTitle("再生", for: .normal)    // 再生・停止ボタンのタイトル文字変更
+            backOutlet.isEnabled = true                 // 戻るボタンの有効
+            nextOutlet.isEnabled = true                 // 進むボタンの有効
+            slideShowFlag = false                       // スライドショーの終了
+            self.timer.invalidate()                     // タイマーの停止
             self.timer = nil
             self.timer_sec = 0
             
@@ -146,7 +141,28 @@ class ViewController: UIViewController {
                 
     }
  
-
+    
+    // タイマー実行中はtimer_secが加算されていく
+    @objc func updateTimer(_ timer: Timer) {
+        
+        if slidePauseFlag == false {
+        
+        self.timer_sec += 0.1
+        // self.timerLabel.text = String(format: "%.1f", self.timer_sec)
+        
+        if self.timer_sec >= 2.0 {
+            index = index + 1
+            if index > 3 {index = 0}
+            // monLabel.text = "\(index)"
+            imageView.image = imageIndex[index]
+            self.timer_sec = 0
+            
+            }
+        }
+    }
+    
+    
+    
     
 }
 

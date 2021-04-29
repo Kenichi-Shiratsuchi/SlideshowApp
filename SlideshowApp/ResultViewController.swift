@@ -11,7 +11,7 @@ class ResultViewController: UIViewController {
    
     
     // imageViewの割り付け
-    @IBOutlet weak var imageView2: UIImageView!
+    @IBOutlet weak var imageView: UIImageView!
 
    
     var image : UIImage!
@@ -21,7 +21,7 @@ class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        imageView2.image = image
+        imageView.image = image
        
         
         // Do any additional setup after loading the view.

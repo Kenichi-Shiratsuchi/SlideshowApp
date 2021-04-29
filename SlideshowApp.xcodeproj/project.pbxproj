@@ -13,6 +13,11 @@
 		D1019374263797A400A510DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1019372263797A400A510DD /* Main.storyboard */; };
 		D1019376263797A500A510DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1019375263797A500A510DD /* Assets.xcassets */; };
 		D1019379263797A500A510DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1019377263797A500A510DD /* LaunchScreen.storyboard */; };
+		D101938A2637CF8000A510DD /* ImageCar001.png in Resources */ = {isa = PBXBuildFile; fileRef = D10193892637CF8000A510DD /* ImageCar001.png */; };
+		D101938D2637CF8D00A510DD /* ImageCar002.png in Resources */ = {isa = PBXBuildFile; fileRef = D101938C2637CF8D00A510DD /* ImageCar002.png */; };
+		D10193902637CF9300A510DD /* ImageCar003.png in Resources */ = {isa = PBXBuildFile; fileRef = D101938F2637CF9300A510DD /* ImageCar003.png */; };
+		D10193932637CFAB00A510DD /* ImageCar004.png in Resources */ = {isa = PBXBuildFile; fileRef = D10193922637CFAB00A510DD /* ImageCar004.png */; };
+		D1DC767F26392CE20075220D /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DC767E26392CE20075220D /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		D1019375263797A500A510DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D1019378263797A500A510DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D101937A263797A500A510DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D10193892637CF8000A510DD /* ImageCar001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ImageCar001.png; sourceTree = "<group>"; };
+		D101938C2637CF8D00A510DD /* ImageCar002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ImageCar002.png; sourceTree = "<group>"; };
+		D101938F2637CF9300A510DD /* ImageCar003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ImageCar003.png; sourceTree = "<group>"; };
+		D10193922637CFAB00A510DD /* ImageCar004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ImageCar004.png; sourceTree = "<group>"; };
+		D1DC767E26392CE20075220D /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +70,14 @@
 				D101936E263797A400A510DD /* SceneDelegate.swift */,
 				D1019370263797A400A510DD /* ViewController.swift */,
 				D1019372263797A400A510DD /* Main.storyboard */,
+				D1DC767E26392CE20075220D /* ResultViewController.swift */,
 				D1019375263797A500A510DD /* Assets.xcassets */,
 				D1019377263797A500A510DD /* LaunchScreen.storyboard */,
 				D101937A263797A500A510DD /* Info.plist */,
+				D10193892637CF8000A510DD /* ImageCar001.png */,
+				D101938C2637CF8D00A510DD /* ImageCar002.png */,
+				D101938F2637CF9300A510DD /* ImageCar003.png */,
+				D10193922637CFAB00A510DD /* ImageCar004.png */,
 			);
 			path = SlideshowApp;
 			sourceTree = "<group>";
@@ -124,9 +139,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D10193932637CFAB00A510DD /* ImageCar004.png in Resources */,
+				D101938A2637CF8000A510DD /* ImageCar001.png in Resources */,
 				D1019379263797A500A510DD /* LaunchScreen.storyboard in Resources */,
 				D1019376263797A500A510DD /* Assets.xcassets in Resources */,
 				D1019374263797A400A510DD /* Main.storyboard in Resources */,
+				D10193902637CF9300A510DD /* ImageCar003.png in Resources */,
+				D101938D2637CF8D00A510DD /* ImageCar002.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +159,7 @@
 				D1019371263797A400A510DD /* ViewController.swift in Sources */,
 				D101936D263797A400A510DD /* AppDelegate.swift in Sources */,
 				D101936F263797A400A510DD /* SceneDelegate.swift in Sources */,
+				D1DC767F26392CE20075220D /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
